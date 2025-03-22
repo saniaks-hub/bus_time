@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Owners</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Main content styling */
+        .main-content {
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .main-content h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th,
+        table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #4CAF50;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        table tr:hover {
+            background-color: #e0f7fa;
+        }
+
+        table td {
+            color: #555;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 600px) {
+            .main-content {
+                width: 100%;
+                padding: 10px;
+            }
+
+            table, th, td {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h1>View Owners</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Owner Name</th>
+                    <th>Bus ID</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>SREERAM</td>
+                    <td>9876543210</td>
+                    <td>johndoe@example.com</td>
+                </tr>
+                <tr>
+                    <td>Ramesh</td>
+                    <td>TWINKLE</td>
+                    <td>9123456780</td>
+                    <td>janesmith@example.com</td>
+                </tr>
+                <tr>
+                    <td>Hussain</td>
+                    <td>Star</td>
+                    <td>9988776655</td>
+                    <td>alanbrown@example.com</td>
+                </tr>
+                <tr>
+                    <td>Sona</td>
+                    <td>Rising sun</td>
+                    <td>8765432109</td>
+                    <td>mariagarcia@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

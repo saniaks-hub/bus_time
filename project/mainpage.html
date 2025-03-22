@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Route Tracking</title>
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        /* Reset & General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('bus1.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f3f6f9;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: rgba(44, 62, 80, 0.95);
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar h2 {
+            color: #1abc9c;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            background-color: #34495e;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #1abc9c;
+            transform: scale(1.05);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 270px;
+            padding: 40px;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2980b9;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .route-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .route-form select, .route-form button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .route-form select:focus, .route-form button:focus {
+            box-shadow: 0 0 8px #2980b9;
+        }
+
+        .route-form button {
+            background-color: #2980b9;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .route-form button:hover {
+            background-color: #1abc9c;
+        }
+
+        /* Results Section */
+        #results {
+            display: none;
+            padding: 20px;
+            background-color: #f3f6f9;
+            border-radius: 8px;
+            margin-top: 20px;
+            color: #2c3e50;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #results h3 {
+            color: #2980b9;
+            margin-bottom: 10px;
+        }
+
+        .bus-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>LOCAL BUS FINDER</h2>
+        <ul>
+            <li><a href="view_owners.html">View Owners</a></li>
+            <li><a href="view_routes.html">View Routes</a></li>
+            <li><a href="view_buses.html">View Buses</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1>WHERE IS MY BUS?</h1>
+        <div class="route-form">
+            <select id="from">
+                <option value="Westhill">Westhill</option>
+            </select>
+            
+            <select id="to">
+                <option value="">Select Destination</option>
+                <option value="Westhill">Westhill</option>
+                <option value="Kozhikode">Kozhikode</option>
+                <option value="NIT">NIT</option>
+                <option value="Medical College">Medical College</option>
+            </select>
+
+            <button onclick="getBusDetails()">Submit</button>
+        </div>
+
+        <!-- Bus details will be displayed here -->
+        <div id="results" class="results">
+            <h3>Bus Details:</h3>
+            <p id="bus-route"></p>
+            <p id="bus-time"></p>
+        </div>
+
+        <div class="bus-image">
+            <img src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        function getBusDetails() {
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+
+            if (from && to) {
+                const busData = getMockBusData(from, to);
+
+                if (busData) {
+                    document.getElementById('bus-route').innerText = `Route: ${busData.route}`;
+                    document.getElementById('bus-time').innerText = `Departure Time: ${busData.time}`;
+                    document.getElementById('results').style.display = 'block';
+                } else {
+                    alert('No bus details found for the selected route.');
+                }
+            } else {
+                alert('Please select both start and destination locations.');
+            }
+        }
+
+        function getMockBusData(from, to) {
+            const routes = {
+                'Westhill-Kozhikode': { route: 'Westhill -> Nadakkavu -> Mavoor Road -> Kozhikode', time: '6:00 AM, 7:00 AM, 10:00 AM, 2:00 PM, 6:00 PM' },
+                'Westhill-NIT': { route: 'Westhill -> Manaserry -> NIT', time: '8:00 AM, 12:00 PM, 5:00 PM' },
+                'Westhill-Medical College': { route: 'Westhill -> Mavoor -> Medical College', time: '9:00 AM, 1:00 PM, 7:00 PM' },
+            };
+            return routes[`${from}-${to}`] || routes[`${to}-${from}`];
+        }
+    </script>
+</body>
+</html>

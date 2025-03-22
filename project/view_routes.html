@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Routes</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f6f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Main content container */
+        .main-content {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .main-content h1 {
+            font-size: 26px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #4CAF50;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #e0f7fa;
+        }
+
+        /* Styling for specific table data */
+        table td {
+            color: #555;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .main-content {
+                width: 100%;
+                padding: 15px;
+            }
+
+            table th, table td {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h1>View Routes</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Route</th>
+                    <th>Stops</th>
+                    <th>Departure Times</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Westhill to Kozhikode</td>
+                    <td>Westhill -> Nadakkavu -> Mavoor Road -> Kozhikode</td>
+                    <td>6:00 AM, 7:00 AM, 10:00 AM, 2:00 PM, 6:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Westhill to NIT</td>
+                    <td>Westhill -> Manaserry -> NIT</td>
+                    <td>8:00 AM, 12:00 PM, 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Westhill to Medical College</td>
+                    <td>Westhill -> Mavoor -> Medical College</td>
+                    <td>9:00 AM, 1:00 PM, 7:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Westhill to Calicut University</td>
+                    <td>Westhill -> Kottaram -> Calicut University</td>
+                    <td>7:30 AM, 11:30 AM, 4:30 PM</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

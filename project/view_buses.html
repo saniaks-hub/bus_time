@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Buses</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Main content styling */
+        .main-content {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .main-content h1 {
+            font-size: 26px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #4CAF50;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        table tr:hover {
+            background-color: #e0f7fa;
+        }
+
+        table td {
+            color: #555;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 600px) {
+            .main-content {
+                width: 100%;
+                padding: 15px;
+            }
+
+            table, th, td {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h1>View Buses</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Bus NAME</th>
+                    <th>Owner</th>
+                    <th>Capacity</th>
+                    <th>Type</th>
+                    <th>Registration Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SREERAM</td>
+                    <td>John</td>
+                    <td>40 seats</td>
+                    <td>Standard</td>
+                    <td>KL-15-AB-1234</td>
+                </tr>
+                <tr>
+                    <td>TWINKLE</td>
+                    <td>Ramesh</td>
+                    <td>50 seats</td>
+                    <td>Luxury</td>
+                    <td>KL-15-AB-5678</td>
+                </tr>
+                <tr>
+                    <td>RISING SUN</td>
+                    <td>Sona</td>
+                    <td>35 seats</td>
+                    <td>Standard</td>
+                    <td>KL-15-AB-9101</td>
+                </tr>
+                <tr>
+                    <td>STAR</td>
+                    <td>Hussain</td>
+                    <td>45 seats</td>
+                    <td>Luxury</td>
+                    <td>KL-15-AB-1122</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
